@@ -7,7 +7,7 @@ It takes the same arguments and behaves the same way as the original board.sh, s
 ## Status
 
 - Ported from board.sh in muse-gadget-sdk `main` @ 9d8cca1 (checked 2026-11-11), targeting ESP-IDF v6.0.3
-- Not yet verified on real Windows hardware. This section will be updated after testing
+- Verified on real Windows hardware (2026-11-11): the Muse Gadget firmware for M5Stack Core2 was built and flashed with board.ps1, without WSL2, and the gadget paired and ran. Other boards have not been tested yet.
 
 ## Background
 
@@ -111,7 +111,7 @@ Meta の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk)
 ## 状況
 
 - 土台は muse-gadget-sdk の `main` @ 9d8cca1（2026-11-11 確認）の board.sh で、対象は ESP-IDF v6.0.3 です
-- Windows 実機での動作確認はまだです。確認できたら、この欄を更新します
+- 2026-11-11に Windows 実機で動作確認済みです。M5Stack Core2 向けの Muse Gadget ファームウェアを、WSL2なしで board.ps1 によりビルド・書き込みし、ペアリングして動作しました。他のボードは未確認です。
 
 ## 経緯
 
