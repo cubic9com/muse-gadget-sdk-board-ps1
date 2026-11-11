@@ -27,6 +27,22 @@ This script exists for the following reasons:
 - An SDK token (issued at [gadgets.muse.ai](https://gadgets.muse.ai) under Account > SDK tokens; required for pairing, and set via menuconfig as described below)
 - A USB cable that supports data transfer
 
+### Installing ESP-IDF v6.0.3
+
+On Windows, clone ESP-IDF and install it with its PowerShell scripts (Git and Python are required). This mirrors the SDK's macOS/Linux instructions, with the `.ps1` versions in place of the `.sh` ones:
+
+```powershell
+git clone -b v6.0.3 --recursive https://github.com/espressif/esp-idf.git
+cd esp-idf
+.\install.ps1 esp32c5,esp32s3,esp32c6,esp32
+.\export.ps1
+```
+
+- The `install.ps1` arguments limit the download to the toolchains for the chips you use (the last one, `esp32`, is what the M5Stack Core2 needs)
+- Run `.\export.ps1` in every new PowerShell session before building; it makes `idf.py` available (board.ps1 also looks for it automatically)
+
+Espressif's GUI installer (EIM) can install v6.0.3 as well; see the [Windows setup guide](https://docs.espressif.com/projects/esp-idf/en/v6.0.3/esp32/get-started/windows-setup.html).
+
 ## Usage
 
 Place `board.ps1` in the SDK's `esp32\tools\muse\` folder (next to the original board.sh), and run it from a PowerShell session with ESP-IDF activated.
@@ -114,6 +130,22 @@ Meta の [muse-gadget-sdk](https://github.com/facebookincubator/muse-gadget-sdk)
 - muse-gadget-sdk のチェックアウト
 - SDK トークン（[gadgets.muse.ai](https://gadgets.muse.ai) の Account > SDK tokens で発行。ペアリングに必要で、設定は後述の menuconfig で行います）
 - データ転送に対応した USB ケーブル
+
+### ESP-IDF v6.0.3 のインストール
+
+Windows では、ESP-IDF を clone して、付属の PowerShell スクリプトでインストールします（Git と Python が必要です）。SDK の Mac/Linux 向け手順の、`.sh` を `.ps1` に置き換えた形です。
+
+```powershell
+git clone -b v6.0.3 --recursive https://github.com/espressif/esp-idf.git
+cd esp-idf
+.\install.ps1 esp32c5,esp32s3,esp32c6,esp32
+.\export.ps1
+```
+
+- `install.ps1` の引数は、使うチップの分だけツールを入れる指定です（最後の `esp32` が M5Stack Core2 用です）
+- `.\export.ps1` は、PowerShell を開くたびに実行します。`idf.py` が使えるようになります（board.ps1 も自動で探します）
+
+GUI インストーラ（EIM）で v6.0.3 を入れる方法もあります。Espressif の [Windows セットアップガイド](https://docs.espressif.com/projects/esp-idf/en/v6.0.3/esp32/get-started/windows-setup.html) を参照してください。
 
 ## 使い方
 
